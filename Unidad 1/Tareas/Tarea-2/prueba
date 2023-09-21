@@ -1,0 +1,3 @@
+ent:proveedores, clientes, productos
+relaciones: comprar, vender
+propiedades:ID, nombre, direccion, telefono contacto, precio, stock, descripcion
