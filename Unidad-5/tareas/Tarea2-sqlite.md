@@ -59,9 +59,7 @@ SELECT * FROM Vehiculos WHERE anio = 2019;
 ```
 7. Seleccionar propietarios que tienen vehículos de la marca "Toyota"
 ```sql
-SELECT Propietarios.* FROM Propietarios
-INNER JOIN Vehiculos ON Propietarios.id = Vehiculos.id_propietario
-WHERE Vehiculos.marca = 'Toyota';
+
 ```
 8. Listar vehículos con marca "Ford" y modelo "Fiesta"
 ```sql
