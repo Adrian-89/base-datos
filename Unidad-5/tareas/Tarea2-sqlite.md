@@ -23,7 +23,7 @@ CREATE TABLE Vehiculos (
     FOREIGN KEY (id_propietario) REFERENCES Propietarios(id)
 );
 ```
-## Paso 2: Insertar 50 entradas
+## Paso 2: Insertar 20 entradas
 ``` sql
 INSERT INTO Propietarios (nombre, apellido, dni) VALUES
     ('Juan', 'Perez', '12345678A'), etc...
