@@ -1,4 +1,8 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS concesionario;
 
+-- Usar la base de datos
+USE concesionario;
 
 CREATE TABLE IF NOT EXISTS clientes (
     id_cliente INTEGER PRIMARY KEY,

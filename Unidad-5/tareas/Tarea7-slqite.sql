@@ -1,8 +1,31 @@
 -- Listar los coches vendidos con sus modelos y precios, junto con los nombres de los clientes que los compraron.
   -- Cosas que debo de tener en cuenta:
     -- ¿Qué me están pidiendo?. ¿Qué es lo que no me han pedido?
-
-
+select co.modelo, co.precio, cli.nombre from coches as co, clientes as cli, ventas as ve where cli.id_cliente=ve.id_cliente and ve.id_coche=co.id_coche;
+/**
+┌────────────────┬─────────┬─────────────────┐
+│     modelo     │ precio  │     nombre      │
+├────────────────┼─────────┼─────────────────┤
+│ Sedán 2022     │ 25000.0 │ Juan Pérez      │
+│ Hatchback 2021 │ 22000.0 │ María Gómez     │
+│ SUV 2023       │ 30000.0 │ Carlos López    │
+│ Coupé 2022     │ 28000.0 │ Ana Martínez    │
+│ Camioneta 2023 │ 32000.0 │ Pedro Rodríguez │
+│ Compacto 2021  │ 20000.0 │ Laura Sánchez   │
+│ Híbrido 2022   │ 27000.0 │ Miguel González │
+│ Deportivo 2023 │ 35000.0 │ Isabel Díaz     │
+│ Eléctrico 2021 │ 40000.0 │ Elena Torres    │
+│ Sedán 2022     │ 25000.0 │ Juan Pérez      │
+│ Hatchback 2021 │ 22000.0 │ María Gómez     │
+│ SUV 2023       │ 30000.0 │ Carlos López    │
+│ Coupé 2022     │ 28000.0 │ Ana Martínez    │
+│ Camioneta 2023 │ 32000.0 │ Pedro Rodríguez │
+│ Compacto 2021  │ 20000.0 │ Laura Sánchez   │
+│ Híbrido 2022   │ 27000.0 │ Miguel González │
+│ Deportivo 2023 │ 35000.0 │ Isabel Díaz     │
+│ Eléctrico 2021 │ 40000.0 │ Elena Torres    │
+└────────────────┴─────────┴─────────────────┘
+**/
 -- Encontrar los clientes que han comprado coches con precios superiores al promedio de todos los coches vendidos.
   -- Cosas que debo de tener en cuenta:
     -- Precios superiores.
