@@ -91,7 +91,7 @@ WHERE id_cliente IN (SELECT id_cliente FROM ventas WHERE id_coche IN (SELECT id_
 ├────────────┤
 │ Juan Pérez │
 └────────────┘
-*/
+**/
 -- Calcular el promedio de edad de los clientes que han comprado coches de más de 25,000.
   -- Cosas que debo de tener en cuenta:
     -- ¿Qué me están pidiendo?. 
