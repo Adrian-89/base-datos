@@ -100,7 +100,7 @@ FROM clientes
 WHERE id_cliente IN (SELECT id_cliente FROM coches WHERE precio > 25000);
 /**
 ┌───────────────┐
-│ promedio_edad │
+│ edad_promedio │
 ├───────────────┤
 │ 31.7          │
 └───────────────┘
