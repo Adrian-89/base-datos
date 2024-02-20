@@ -97,6 +97,7 @@ select id, nombre, apellido1 from cliente where apellido2 NOT NULL;
 │ 10 │ Daniel    │ Santana   │
 └────┴───────────┴───────────┘
 **/
+
     --Devuelve un listado de los nombres de los clientes que empiezan por A y terminan por n y también los nombres que empiezan por P. El listado deberá estar ordenado alfabéticamente.
 
    --Devuelve un listado de los nombres de los clientes que no empiezan por A. El listado deberá estar ordenado alfabéticamente.
