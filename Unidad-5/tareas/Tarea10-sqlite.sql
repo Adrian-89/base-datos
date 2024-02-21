@@ -21,7 +21,7 @@ SELECT * FROM employees WHERE title = "Sales Manager";
 │ 2          │ Edwards  │ Nancy     │ Sales Manager │ 1         │ 1958-12-08 00:00:00 │ 2002-05-01 00:00:00 │ 825 8 Ave SW │ Calgary │ AB    │ Canada  │ T2P 2T3    │ +1 (403) 262-3443 │ +1 (403) 262-3322 │ nancy@chinookcorp.com │
 └────────────┴──────────┴───────────┴───────────────┴───────────┴─────────────────────┴─────────────────────┴──────────────┴─────────┴───────┴─────────┴────────────┴───────────────────┴───────────────────┴───────────────────────┘
 **/
-
+ 
 --Proporciona una consulta que muestre una lista única de países de facturación de la tabla de Facturas.
 
 SELECT DISTINCT BillingCountry FROM invoices;

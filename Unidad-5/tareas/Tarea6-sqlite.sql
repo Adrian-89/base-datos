@@ -35,7 +35,7 @@ SELECT * FROM Clientes;
 │ 29 │ Celia García    │ celia@example.com         │
 └────┴─────────────────┴───────────────────────────┘
 **/
-
+ 
 -- Obtener la cantidad total de productos en todos los pedidos
 SELECT SUM(cantidad) AS all_products FROM Pedidos WHERE id_producto IN (SELECT id_producto FROM Productos);
 /**
