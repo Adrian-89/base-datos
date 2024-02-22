@@ -1,7 +1,37 @@
 --Consultas de una única tabla
 
     --Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.
-
+select nombre, apellido1, apellido2 from persona order by nombre, apellido1, apellido2 DESC;
+/** corregir
+┌───────────┬────────────┬────────────┐
+│  nombre   │ apellido1  │ apellido2  │
+├───────────┼────────────┼────────────┤
+│ Alejandro │ Kohler     │ Schoen     │
+│ Alfredo   │ Stiedemann │ Morissette │
+│ Antonio   │ Domínguez  │ Guerrero   │
+│ Antonio   │ Fahey      │ Considine  │
+│ Carmen    │ Streich    │ Hirthe     │
+│ Cristina  │ Lemke      │ Rutherford │
+│ Daniel    │ Herman     │ Pacocha    │
+│ David     │ Schmidt    │ Fisher     │
+│ Esther    │ Spencer    │ Lakin      │
+│ Francesca │ Schowalter │ Muller     │
+│ Guillermo │ Ruecker    │ Upton      │
+│ Inma      │ Lakin      │ Yundt      │
+│ Irene     │ Hernández  │ Martínez   │
+│ Ismael    │ Strosin    │ Turcotte   │
+│ José      │ Koss       │ Bayer      │
+│ Juan      │ Gutiérrez  │ López      │
+│ Juan      │ Saez       │ Vega       │
+│ Manolo    │ Hamill     │ Kozey      │
+│ Micaela   │ Monahan    │ Murray     │
+│ Pedro     │ Heller     │ Pagac      │
+│ Ramón     │ Herzog     │ Tremblay   │
+│ Salvador  │ Sánchez    │ Pérez      │
+│ Sonia     │ Gea        │ Ruiz       │
+│ Zoe       │ Ramirez    │ Gea        │
+└───────────┴────────────┴────────────┘
+**/
     --Averigua el nombre y los dos apellidos de los alumnos que no han dado de alta su número de teléfono en la base de datos.
 
     --Devuelve el listado de los alumnos que nacieron en 1999.
