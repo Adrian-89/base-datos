@@ -101,3 +101,4 @@ select nombre, apellido1, apellido2 from persona order by nombre, apellido1, ape
     --Devuelve un listado con las asignaturas que no tienen un profesor asignado.
 
     --Devuelve un listado con todos los departamentos que no han impartido asignaturas en ningún curso escolar.
+    select d.* from departamento as d where d.id not in(SELECT d.* from departamento as d join profesor as p on d.id=p.id_departamento join asignatura as a on p.id_profesor=a.id_profesor)
