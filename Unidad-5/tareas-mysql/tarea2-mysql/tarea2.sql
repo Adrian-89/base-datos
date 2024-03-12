@@ -6,7 +6,7 @@ USE practica_joins;
 
 -- Crear la tabla de clientes
 CREATE TABLE IF NOT EXISTS clientes (
-    id_cliente INTEGER AUTO_INCREMENT PRIMARY KEY ,
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY ,
     nombre VARCHAR(50),
     direccion VARCHAR(100)
 );
