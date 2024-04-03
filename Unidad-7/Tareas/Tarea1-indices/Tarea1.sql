@@ -38,13 +38,76 @@ Define los siguientes indices:
 **/
 
 --Intente ingresar un alumno con clave primaria repetida. 
--- INSERT INTO Alumnos VALUES(2003, Roberto, doc1, calle_1, Puerto_Cruz, Sta_Cruz_de_Tenerife); INSERT INTO Alumnos VALUES(1, 'Aarón', 'Rivero', 'Gómez', 'Almería', 100);
+/**
+mysql> INSERT INTO Alumnos (anio_inscripcion, nombre_alumno, documento_alumno, domicilio, ciudad, provincia) 
+    -> VALUES (2003, 'Roberto', 'doc1', 'calle_1', 'Puerto_Cruz', 'Sta_Cruz_de_Tenerife');
+Query OK, 1 row affected (0,00 sec)
 
+mysql> select * from Alumnos;
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+| numero_inscripcion | anio_inscripcion | nombre_alumno | documento_alumno | domicilio | ciudad      | provincia            |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+|                  1 |             2003 | Roberto       | doc1             | calle_1   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+1 row in set (0,00 sec)
+
+mysql> INSERT INTO Alumnos (anio_inscripcion, nombre_alumno, documento_alumno, domicilio, ciudad, provincia)  VALUES (2003, 'Fernando', 'doc2', 'calle_2', 'Puerto_Cruz', 'Sta_Cruz_de_Tenerife');
+Query OK, 1 row affected (0,01 sec)
+
+mysql> select * from Alumnos;
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+| numero_inscripcion | anio_inscripcion | nombre_alumno | documento_alumno | domicilio | ciudad      | provincia            |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+|                  1 |             2003 | Roberto       | doc1             | calle_1   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
+|                  2 |             2003 | Fernando      | doc2             | calle_2   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+2 rows in set (0,00 sec)
+**/
 --Intente ingresar un alumno con documento repetido. 
---
+/**
+mysql> INSERT INTO Alumnos (anio_inscripcion, nombre_alumno, documento_alumno, domicilio, ciudad, provincia)  VALUES (2002, 'Felipe', 'doc2', 'calle_3', 'Santa_Cruz', 'Sta_Cruz_de_Tenerife');
+Query OK, 1 row affected (0,00 sec)
+
+mysql> select * from Alumnos;
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+| numero_inscripcion | anio_inscripcion | nombre_alumno | documento_alumno | domicilio | ciudad      | provincia            |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+|                  1 |             2003 | Roberto       | doc1             | calle_1   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
+|                  2 |             2003 | Fernando      | doc2             | calle_2   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
+|                  3 |             2002 | Felipe        | doc2             | calle_3   | Santa_Cruz  | Sta_Cruz_de_Tenerife |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+3 rows in set (0,00 sec)
+**/
 
 --Ingrese varios alumnos de la misma ciudad y provincia. 
---
+/**
+mysql> INSERT INTO Alumnos (anio_inscripcion, nombre_alumno, documento_alumno, domicilio, ciudad, provincia)  VALUES (2002, 'Felipe', 'doc2', 'calle_3', 'Santa_Cruz', 'Sta_Cruz_de_Tenerife');
+Query OK, 1 row affected (0,00 sec)
+
+mysql> INSERT INTO Alumnos (anio_inscripcion, nombre_alumno, documento_alumno, domicilio, ciudad, provincia) 
+    -> VALUES (2003, 'Roberto', 'doc1', 'calle_1', 'Puerto_Cruz', 'Sta_Cruz_de_Tenerife');
+
+mysql> select * from Alumnos;
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+| numero_inscripcion | anio_inscripcion | nombre_alumno | documento_alumno | domicilio | ciudad      | provincia            |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+|                  1 |             2003 | Roberto       | doc1             | calle_1   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
+|                  2 |             2003 | Fernando      | doc2             | calle_2   | Puerto_Cruz | Sta_Cruz_de_Tenerife |
+|                  3 |             2002 | Felipe        | doc2             | calle_3   | Santa_Cruz  | Sta_Cruz_de_Tenerife |
++--------------------+------------------+---------------+------------------+-----------+-------------+----------------------+
+3 rows in set (0,00 sec)
+**/
 
 --Elimina los indices creados, y muestra que ya no se encuentran. 
+--DROP INDEX documento ON Alumnos;
+--DROP INDEX ciudad_y_provincia ON Alumnos;
+/**
+mysql> show index from Alumnos;
++---------+------------+----------+--------------+--------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name        | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++---------+------------+----------+--------------+--------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Alumnos |          0 | PRIMARY  |            1 | numero_inscripcion | A         |           4 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| Alumnos |          0 | PRIMARY  |            2 | anio_inscripcion   | A         |           4 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
++---------+------------+----------+--------------+--------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+2 rows in set (0,00 sec)
 --
