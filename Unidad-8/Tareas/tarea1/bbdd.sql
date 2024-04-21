@@ -29,3 +29,32 @@ INSERT INTO Products (ProductName, Price) VALUES ('Producto 3', 15.75);
 INSERT INTO Products (ProductName, Price) VALUES ('Producto 4', 10.75);
 INSERT INTO Products (ProductName, Price) VALUES ('Producto 5', 14.85);
 INSERT INTO Products (ProductName, Price) VALUES ('Producto 6', 12.10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
