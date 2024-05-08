@@ -22,8 +22,10 @@ INSERT INTO empleados (nombre, salario) VALUES
 ## Procedimiento 1
 ### Escribe un procedimiento almacenado que aumente los salarios de todos los empleados en un 5%, pero excluya a aquellos cuyo salario sea superior a 3200. El procedimiento debe tener parámetros de entrada.
 ```sql
- DELIMITER //
-  CREATE PROCEDURE aumentar_salarios_con_porcentaje(IN porcentaje DECIMAL(5,2))
+ DROP PROCEDURE IF EXISTS aumentar_salarios;
+
+  DELIMITER //
+  CREATE PROCEDURE aumentar_salarios(IN porcentaje DECIMAL(5,2), limite DECIMAL(10,2))
   BEGIN
       DECLARE done INT DEFAULT FALSE;
       DECLARE emp_id INT;
@@ -38,9 +40,20 @@ INSERT INTO empleados (nombre, salario) VALUES
           IF done THEN
               LEAVE read_loop;
           END IF;
-          UPDATE empleados SET salario = salario * (1 + porcentaje / 100) WHERE id = emp_id and salario > 3200;
+          UPDATE empleados SET salario = salario * (1 + porcentaje / 100) WHERE salario > limite;
       END LOOP;
       CLOSE cur;
   END //
   DELIMITER ;
+
+CALL aumentar_salarios(0.05, 3200);
+Query OK, 0 rows affected (0,04 sec)
+mysql> SELECT * FROM empleados;
++----+--------+---------+
+| id | nombre | salario |
++----+--------+---------+
+|  1 | Juan   | 3000.00 |
+|  2 | María  | 3505.25 |
+|  3 | Pedro  | 3365.04 |
++----+--------+---------+
   ```
