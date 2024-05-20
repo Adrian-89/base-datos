@@ -1,6 +1,6 @@
 # Trabajo con procedimientos de generación de información
 
-## Dado el procedimiento base:
+## Dado el procedimiento base
 
 ```sql
 DELIMITER //
@@ -25,6 +25,7 @@ CALL my_loop(5);
 ```
 
 ### 1. Inserta cinco filas en la tabla empleados con nombres aleatorios generados usando la función CONCAT() junto con RAND().
+
 ```sql
   INSERT INTO empleados (nombre, salario)
   VALUES (CONCAT('Empleado', RAND()), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
@@ -70,6 +71,7 @@ mysql> SELECT * FROM empleados;
 ```
 
 ### 2. Inserta tres filas en la tabla empleados con nombres aleatorios generados usando la función UUID().
+
 ```sql
 INSERT INTO empleados (nombre, salario)
 VALUES (UUID(), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
@@ -122,6 +124,7 @@ mysql> select * from empleados;
 ```
 
 ### 3. Inserta dos filas en la tabla empleados con nombres aleatorios generados usando la función RAND() junto con ORDER BY RAND().
+
 ```sql
 INSERT INTO empleados (nombre, salario)
 SELECT CONCAT('Empleado', RAND()), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000
@@ -132,7 +135,8 @@ LIMIT 2;
 
 ```
 
-### 4. Inserta cuatro filas en la tabla empleados con nombres aleatorios generados usando la función SUBSTRING_INDEX(UUID(), '-', -1).
+### 4. Inserta cuatro filas en la tabla empleados con nombres aleatorios generados usando la función SUBSTRING_INDEX(UUID(), '-', -1)
+
 ```sql
 INSERT INTO empleados (nombre, salario)
 VALUES (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
@@ -144,6 +148,7 @@ VALUES (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2
 ```
 
 ### 5. Inserta seis filas en la tabla empleados con nombres aleatorios generados usando la función RAND() y una semilla diferente.
+
 ```sql
 INSERT INTO empleados (nombre, salario)
 VALUES (CONCAT('Empleado', RAND(1)), FLOOR(RAND(1) * (10000 - 2000 + 1)) + 2000),
@@ -153,8 +158,4 @@ VALUES (CONCAT('Empleado', RAND(1)), FLOOR(RAND(1) * (10000 - 2000 + 1)) + 2000)
       (CONCAT('Empleado', RAND(5)), FLOOR(RAND(5) * (10000 - 2000 + 1)) + 2000),
       (CONCAT('Empleado', RAND(6)), FLOOR(RAND(6) * (10000 - 2000 + 1)) + 2000);
 ---------------------------------------------------------------------------
-
 ```
-
-
-  
