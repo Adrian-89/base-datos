@@ -146,21 +146,7 @@ Seguidos estos pasos se creará la tabla siguiente:
 |id|email|DNI_estudiante|
 |:---:|:----------:|:-------:|
 |10001|pj@gmail.com|30098456A|
-|10002|jp@gmail.com|30098456A|select * from estudiante;
-+-----------+--------+------------+-----------------------+
-| DNI       | nombre | apellido   | id_programa_academico |
-+-----------+--------+------------+-----------------------+
-| 12343245N | Marco  | Expósito   |                   232 |
-| 12345678T | Daniel | Guitérrez  |                   234 |
-| 12579852L | Carla  | Perales    |                   235 |
-| 20530861V | Carlos | Martínez   |                   234 |
-| 30098456A | Juan   | Pérez      |                   231 |
-| 46477886M | Alex   | Fernández  |                   233 |
-| 47603352J | Carlos | García     |                   232 |
-| 48822543H | Marta  | García     |                   235 |
-| 93949478J | Lucía  | Rodríguez  |                   232 |
-+-----------+--------+------------+-----------------------+
-9 rows in set (0,00 sec)
+|10002|jp@gmail.com|30098456A|
 |10003|me@gmail.com|12343245N|
 |10004|em@gmail.com|12343245N|
 |10005|af@gmail.com|46477886M|
